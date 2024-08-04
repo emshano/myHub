@@ -25,7 +25,7 @@ function SingleTrainStatus({trainLineFeed, trainLine, station}) {
 
 useEffect(()=> {
 const timer = setInterval(() => {
-  axios.get(`nyct%2F${trainLineFeed}`, {responseType : "arraybuffer"})
+  axios.get(`https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2F${trainLineFeed}`, {responseType : "arraybuffer"})
   .then((response) => {
     var northBound = [];
     var southBound = [];
