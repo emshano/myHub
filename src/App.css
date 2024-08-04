@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@300;400;600&display=swap');
+
+@font-face {
+  font-family: 'Clocky';
+  src: local("digital-7.mono"), url('./fonts/digital-7.mono.ttf') format('truetype');
+}
+
+html {
+  background: rgb(0,0,0);
+  /* background: linear-gradient(180deg, rgba(214,80,80,1) 0%, rgba(0,0,0,1) 2%); */
+  color: aliceblue;
+}
+
+h3,
+h2 {
+  margin: 0;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+
+}
+
+h1 {
+  font-size: 100px;
+  font-family: "Clocky";
+}
+
+p {
+  margin: 0 0;
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 44px;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+}
+
+.smallLogo {
+  width: 40px;
+  height: 40px;
+  margin-right: 3px;
+
+}
+
+#pkmn {
+  image-rendering: pixelated;
+  /* -webkit-filter: drop-shadow(2px 2px 0 white) drop-shadow(-2px 2px 0 white) drop-shadow(2px -2px 0 white) drop-shadow(-2px -2px 0 white);
+  filter: drop-shadow(2px 2px 0 white) drop-shadow(-2px 2px 0 white) drop-shadow(2px -2px 0 white) drop-shadow(-2px -2px 0 white); */
+  animation-name: floating;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  width: 200px;
+  height: 200px;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+
+@keyframes floating {
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(0, 15px); }
+  100%   { transform: translate(0, -0px); }   
+}
+
+.line-info {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-start;
+  place-items: center;
+  margin: 4px 0px;
+}
+
+.imgContainer {
+  display: flex;
+  align-self: center;
+  margin-right: 5px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.timeTable {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  text-align: center;
+}
+
+.station {
+  text-align: right;
+}
+
+.timeColumn {
+  margin: 8px;
+}
+
+.updated {
+  text-align: right;
+  opacity: 0.4;
+}
+
+.title {
+  display: flex;
+  place-self: center;
+}
+
+.stationTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.vidWrap {
+  order: -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  mix-blend-mode: hard-light;
+}
