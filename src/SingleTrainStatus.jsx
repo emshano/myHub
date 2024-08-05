@@ -7,7 +7,7 @@ import stations from "./mta_dict/mtaStations"
 import mtaStations from './mta_dict/mtaStations';
 
 
-function SingleTrainStatus({trainLineFeed, trainLine, station}) {
+function SingleTrainStatus({trainLineFeed, trainLine, station, northTerminus, southTerminus}) {
 
   const [departures, setDepartures] = useState({north: [], south: []});
   // const [south, setSouth] = useState([]);
@@ -94,7 +94,7 @@ return () => clearInterval(timer);
 }, []);
 
   return (
-    <div className="App">
+    <div className="">
     <div className="stationTitle">
       <div className="imgContainer"> <img className="logo" src={`signage/${trainLine}.svg`} alt="Train line logo"></img></div>
       <div className="title">
@@ -104,8 +104,8 @@ return () => clearInterval(timer);
       <p className="updated">Last updated: {new Date().toTimeString().substring(0,8)} </p>
 
       <div className="timeTable">
-        <TimeTableCol directionArray={departures.north} direction="Manhattan"/>
-        <TimeTableCol directionArray={departures.south} direction="Queens"/>
+        <TimeTableCol directionArray={departures.north} direction={northTerminus}/>
+        <TimeTableCol directionArray={departures.south} direction={southTerminus}/>
       </div>
   </div>
   );

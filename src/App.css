@@ -19,7 +19,8 @@ h2 {
 }
 
 h1 {
-  font-size: 100px;
+  font-size: 250px;
+  font-weight: 900;
   font-family: "Clocky";
 }
 
@@ -48,14 +49,10 @@ h2 {
   image-rendering: pixelated;
   /* -webkit-filter: drop-shadow(2px 2px 0 white) drop-shadow(-2px 2px 0 white) drop-shadow(2px -2px 0 white) drop-shadow(-2px -2px 0 white);
   filter: drop-shadow(2px 2px 0 white) drop-shadow(-2px 2px 0 white) drop-shadow(2px -2px 0 white) drop-shadow(-2px -2px 0 white); */
-  animation-name: floating;
-  animation-duration: 7s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
   width: 200px;
   height: 200px;
-  aspect-ratio: 1;
   object-fit: contain;
+  mix-blend-mode: exclude;
 }
 
 
@@ -82,21 +79,22 @@ h2 {
 
 .wrapper {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   height: 100vh;
   padding: 20px;
   box-sizing: border-box;
+  background-color: black;
 }
 
 .timeTable {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: flex-start;
   text-align: center;
 }
 
 .station {
-  text-align: right;
+  text-align: left;
 }
 
 .timeColumn {
@@ -104,7 +102,7 @@ h2 {
 }
 
 .updated {
-  text-align: right;
+  text-align: left;
   opacity: 0.4;
 }
 
@@ -116,11 +114,10 @@ h2 {
 .stationTitle {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .vidWrap {
-  order: -1;
   display: flex;
   flex-direction: column;
   align-items: center;
