@@ -1,65 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@300;400;600&display=swap');
 
-@font-face {
-  font-family: 'Clocky';
-  src: local("digital-7.mono"), url('./fonts/digital-7.mono.ttf') format('truetype');
-}
+@import url('https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Nanum+Gothic+Coding:wght@400;700&display=swap');
 
 html {
   background: rgb(0,0,0);
-  /* background: linear-gradient(180deg, rgba(214,80,80,1) 0%, rgba(0,0,0,1) 2%); */
   color: aliceblue;
-}
-
-h3,
-h2 {
-  margin: 0;
-  font-family: 'IBM Plex Sans Condensed', sans-serif;
-
-}
-
-h1 {
-  font-size: 250px;
-  font-weight: 900;
-  font-family: "Clocky";
-}
-
-p {
-  margin: 0 0;
-  font-size: 36px;
 }
 
 h2 {
   font-size: 44px;
+  margin: 0;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
 }
 
-.logo {
-  width: 60px;
-  height: 60px;
+h1 {
+  font-size: 200px;
+  font-weight: 900;
+  font-family: "Fragment Mono", system-ui;
 }
 
-.smallLogo {
-  width: 40px;
-  height: 40px;
-  margin-right: 3px;
-
-}
-
-#pkmn {
-  image-rendering: pixelated;
-  /* -webkit-filter: drop-shadow(2px 2px 0 white) drop-shadow(-2px 2px 0 white) drop-shadow(2px -2px 0 white) drop-shadow(-2px -2px 0 white);
-  filter: drop-shadow(2px 2px 0 white) drop-shadow(-2px 2px 0 white) drop-shadow(2px -2px 0 white) drop-shadow(-2px -2px 0 white); */
-  width: 200px;
-  height: 200px;
-  object-fit: contain;
-  mix-blend-mode: exclude;
-}
-
-
-@keyframes floating {
-  0% { transform: translate(0,  0px); }
-  50%  { transform: translate(0, 15px); }
-  100%   { transform: translate(0, -0px); }   
+p {
+  margin: 0;
+  font-size: 36px;
 }
 
 .line-info {
@@ -77,15 +39,6 @@ h2 {
   margin-right: 5px;
 }
 
-.wrapper {
-  display: flex;
-  justify-content: space-between;
-  height: 100vh;
-  padding: 20px;
-  box-sizing: border-box;
-  background-color: black;
-}
-
 .timeTable {
   display: flex;
   flex-direction: row;
@@ -97,30 +50,13 @@ h2 {
   text-align: left;
 }
 
-.timeColumn {
-  margin: 8px;
-}
-
 .updated {
   text-align: left;
   opacity: 0.4;
-}
-
-.title {
-  display: flex;
-  place-self: center;
 }
 
 .stationTitle {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-}
-
-.vidWrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  mix-blend-mode: hard-light;
 }
