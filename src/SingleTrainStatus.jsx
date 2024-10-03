@@ -3,7 +3,6 @@ import GtfsRealtimeBindings from 'gtfs-realtime-bindings';
 import axios from 'axios';
 import TimeTableCol from './TimeTableCol'
 import './App.css';
-import stations from "./mta_dict/mtaStations"
 import mtaStations from './mta_dict/mtaStations';
 
 
@@ -51,8 +50,6 @@ const timer = setInterval(() => {
                     line: routeID,
                     relativeTime: relTime
                 }
-                //var trainTime = stopTime.departure.time
-                //console.log(trainTime)
 
                 if (stopTime.stopId === `${station}N`){
                   northBound.push(trainObj)
@@ -70,17 +67,10 @@ const timer = setInterval(() => {
       }
   });
   var northy = northBound
-  console.log("north:")
   northy.sort((a,b) =>  a.relativeTime - b.relativeTime);
-  console.log(northy)
-
-  
 
   var southy = southBound
-  console.log("south:")
   southy.sort((a,b) =>  a.relativeTime - b.relativeTime);
-  console.log(southy)
-
 
   setDepartures({north: northy, south: southy})
 
