@@ -85,13 +85,19 @@ function SingleTrainStatus({ trainLineFeed, trainLine, station, northTerminus, s
 
   return (
     <div className="">
-      <div className="stationTitle">
-        <div className="imgContainer"> <img className="h-16 w-16" src={`signage/${trainLine}.svg`} alt="Train line logo"></img></div>
-        <div className="flex place-self-center">
-          <h2> {mtaStations[stationCode].stop_name}</h2>
+      <div className="flex flex-row justify-between">
+        <div className="stationTitle">
+          <div className="imgContainer"> <img className="h-16 w-16" src={`signage/${trainLine}.svg`} alt="Train line logo"></img></div>
+          <div className="flex place-self-center">
+            <h2 className='font-bold text-5xl'> {mtaStations[stationCode].stop_name}</h2>
+          </div>
+        </div>
+        <div>
+          <p className="updated">Last updated: {new Date().toTimeString().substring(0, 8)} </p>
         </div>
       </div>
-      <p className="updated">Last updated: {new Date().toTimeString().substring(0, 8)} </p>
+
+
 
       <div className="timeTable">
         <TimeTableCol directionArray={departures.north} direction={northTerminus} />

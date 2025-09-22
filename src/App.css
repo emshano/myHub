@@ -7,11 +7,7 @@ html {
   color: aliceblue;
 }
 
-h2 {
-  font-size: 44px;
-  margin: 0;
-  font-family: 'IBM Plex Sans Condensed', sans-serif;
-}
+
 
 h1 {
   font-size: 200px;
@@ -26,11 +22,7 @@ p {
 
 .line-info {
   display: flex;
-  width: 100%;
-  flex-direction: row;
-  justify-content: flex-start;
-  place-items: center;
-  margin: 4px 0px;
+
 }
 
 .imgContainer {
@@ -41,9 +33,10 @@ p {
 
 .timeTable {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
+  gap: 5px;
 }
 
 .station {
@@ -59,4 +52,21 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+}
+
+.cell-0{
+  background-color: white;
+  z-index: 0;
+}
+.cell-1{
+  background-color: rgb(211, 211, 211);
+  z-index: -1;
+}
+.cell-2{
+  background-color: rgb(162, 162, 162);
+  z-index: -2;
+}
+.cell-3{
+  background-color: rgb(98, 98, 98);
+  z-index: -3;
 }

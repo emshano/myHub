@@ -21,11 +21,9 @@ function Clock() {
 }
 
 function App() {
-
-
   return (
     <div className="wrapper flex flex-col h-screen p-5">
-      <div className="totalInfo flex flex-col lg:flex-row justify-around">
+      <div className="totalInfo flex flex-col justify-around">
         <SingleTrainStatus trainLineFeed="gtfs" trainLine="3" station="249" northTerminus="Manhattan" southTerminus="East New York" />
         <SingleTrainStatus trainLineFeed="gtfs-ace" trainLine="C" station="A47" northTerminus="Manhattan" southTerminus="Queens" />
         {/* <BusTime/> */}
