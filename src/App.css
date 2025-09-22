@@ -12,7 +12,6 @@ html {
 h1 {
   font-size: 200px;
   font-weight: 900;
-  font-family: "Fragment Mono", system-ui;
 }
 
 p {
@@ -36,7 +35,7 @@ p {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  gap: 5px;
+  gap: 10px;
 }
 
 .station {

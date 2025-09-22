@@ -7,10 +7,10 @@ function TimeTableCol({ directionArray, direction }) {
                 {directionArray
                     .slice(0, 4)
                     .map((trainObj, index) => {
-                        return <div className={`line-info cell-${index} rounded-r-xl pr-2 pl-3 -mr-3`}>
+                        return <div className={`line-info cell-${index} rounded-r-xl pr-3 pl-3 -mr-3`}>
                             <div className="mr-1 w-16 h-16"><img width="100%" src={`signage/${trainObj.line}.svg`} alt="Train line logo"></img></div>
-                            <div className="flex flex-col">
-                                <span className="font-bold text-3xl -mb-2">{Math.floor(trainObj.relativeTime) < 1 ? "Arriving" : Math.floor(trainObj.relativeTime)}</span><span className="text-sm">mins</span>
+                            <div className="flex flex-col justify-center">
+                                <span className="font-bold text-3xl leading-[0.95]">{Math.floor(trainObj.relativeTime) < 1 ? "Arriving" : Math.floor(trainObj.relativeTime)}</span><span className="leading-[0.95] text-sm">{Math.floor(trainObj.relativeTime) < 1 ? "" : "mins"}</span>
                             </div>
                         </div>
                     })}
