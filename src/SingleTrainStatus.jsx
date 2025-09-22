@@ -85,7 +85,7 @@ function SingleTrainStatus({ trainLineFeed, trainLine, station, northTerminus, s
 
   return (
     <div className="">
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-row justify-between items-center">
         <div className="stationTitle">
           <div className="imgContainer"> <img className="h-16 w-16" src={`signage/${trainLine}.svg`} alt="Train line logo"></img></div>
           <div className="flex place-self-center">

@@ -21,6 +21,7 @@ p {
 
 .line-info {
   display: flex;
+  box-shadow: 7px 0px 7px rgba(0, 0, 0, 0.267)
 
 }
 
