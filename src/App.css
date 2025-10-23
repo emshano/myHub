@@ -21,8 +21,11 @@ p {
 
 .line-info {
   display: flex;
-  box-shadow: 7px 0px 7px rgba(0, 0, 0, 0.267)
-
+  /* box-shadow: 12px 0px 0px rgb(0, 0, 0) */
+  border-right: rgb(0, 0, 0) 7px solid;
+  border-top: rgb(0, 0, 0) 7px solid;
+  border-bottom: rgb(0, 0, 0) 7px solid;
+  
 }
 
 .imgContainer {
@@ -37,6 +40,12 @@ p {
   justify-content: center;
   text-align: center;
   gap: 10px;
+}
+
+.lefty{
+  border-left: rgb(0, 0, 0) 7px solid;
+  border-top: rgb(0, 0, 0) 7px solid;
+  border-bottom: rgb(0, 0, 0) 7px solid;
 }
 
 .station {
@@ -55,18 +64,23 @@ p {
 }
 
 .cell-0{
-  background-color: white;
-  z-index: 0;
+  /* background-color: white; */
+  /* z-index: 0; */
+  overflow: hidden; 
+  
 }
 .cell-1{
-  background-color: rgb(211, 211, 211);
-  z-index: -1;
+  /* background-color: white; */
+  /* z-index: -1; */
+  overflow: hidden; 
 }
 .cell-2{
-  background-color: rgb(162, 162, 162);
-  z-index: -2;
+  /* background-color: white; */
+  /* z-index: -2; */
+  overflow: hidden; 
 }
 .cell-3{
-  background-color: rgb(98, 98, 98);
-  z-index: -3;
+  /* background-color: white; */
+  /* z-index: -3; */
+  overflow: hidden; 
 }

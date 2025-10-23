@@ -35,7 +35,7 @@ function SingleTrainStatus({ trainLineFeed, trainLine, station, northTerminus, s
 
           feed.entity.forEach((entity, i) => {
             //var tripUpdate = entity.tripUpdate
-            if (i % 2 === 0 || i == 0) {
+            if (i % 2 === 0 || i === 0) {
               try {
                 var routeID = entity.tripUpdate.trip.routeId
                 var stopTimes = entity.tripUpdate.stopTimeUpdate
@@ -52,6 +52,7 @@ function SingleTrainStatus({ trainLineFeed, trainLine, station, northTerminus, s
                     }
 
                     if (stopTime.stopId === `${station}N`) {
+                      //maybe we can prevent trains with the relative time that are negative from being added to the array.
                       northBound.push(trainObj)
                     }
                     else if (stopTime.stopId === `${station}S`) {
