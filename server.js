@@ -1,9 +1,8 @@
-// server.js
-import express from 'express';
-import path from 'path';
-import cors from 'cors';
-import dotenv from 'dotenv';
-import { fileURLToPath } from 'url';
+// server.js  (CommonJS version)
+const express = require('express');
+const path = require('path');
+const cors = require('cors');
+const dotenv = require('dotenv');
 
 dotenv.config();
 
@@ -14,7 +13,7 @@ const API_KEY = process.env.API_KEY || '';
 app.use(cors());
 app.use(express.json({ limit: '1mb' }));
 
-// ==== NOW PLAYING STORE ====
+// ==== NOW PLAYING STORE (in-memory) ====
 let nowPlaying = null;
 
 // ---- iPhone Shortcut POSTs here ----
@@ -37,19 +36,20 @@ app.post('/api/now-playing', (req, res) => {
   res.json({ status: 'ok' });
 });
 
-// ---- Your React app GETs here ----
+// ---- React app GETs here ----
 app.get('/api/now-playing', (req, res) => {
   res.json({ nowPlaying });
 });
 
 // ===== STATIC REACT BUILD SERVING =====
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
-app.use(express.static(path.join(__dirname, 'build')));
+// In CommonJS, __dirname is available automatically
+const buildPath = path.join(__dirname, 'build');
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+app.use(express.static(buildPath));
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(buildPath, 'index.html'));
 });
 
 app.listen(PORT, () => {
