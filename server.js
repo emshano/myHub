@@ -1,4 +1,4 @@
-// server.js  (CommonJS version)
+// server.js  (CommonJS + regex catch-all, safe with Express 4 or 5)
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
@@ -42,13 +42,13 @@ app.get('/api/now-playing', (req, res) => {
 });
 
 // ===== STATIC REACT BUILD SERVING =====
-
-// In CommonJS, __dirname is available automatically
 const buildPath = path.join(__dirname, 'build');
 
 app.use(express.static(buildPath));
 
-app.get('/*', (req, res) => {
+// Catch-all for any NON-API route, using RegExp to avoid path-to-regexp
+// This matches everything that doesn't start with "/api/"
+app.get(/^(?!\/api\/).*/, (req, res) => {
   res.sendFile(path.join(buildPath, 'index.html'));
 });
 
