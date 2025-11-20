@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import GtfsRealtimeBindings from 'gtfs-realtime-bindings';
 import axios from 'axios';
-import TimeTableCol from './TimeTableCol'
+import SingleArrivalRow from './SingleArrivalRow'
 import './App.css';
 import mtaStations from './mta_dict/mtaStations';
 
@@ -90,7 +90,7 @@ function SingleTrainStatus({ trainLineFeed, trainLine, station, northTerminus, s
         <div className="stationTitle">
           <div className="imgContainer"> <img className="h-16 w-16" src={`signage/${trainLine}.svg`} alt="Train line logo"></img></div>
           <div className="flex place-self-center">
-            <h2 className='font-bold text-5xl'> {mtaStations[stationCode].stop_name}</h2>
+            <p className='font-bold text-4xl'> {mtaStations[stationCode].stop_name}</p>
           </div>
         </div>
         <div>
@@ -101,8 +101,8 @@ function SingleTrainStatus({ trainLineFeed, trainLine, station, northTerminus, s
 
 
       <div className="timeTable">
-        <TimeTableCol directionArray={departures.north} direction={northTerminus} />
-        <TimeTableCol directionArray={departures.south} direction={southTerminus} />
+        <SingleArrivalRow directionArray={departures.north} direction={northTerminus} />
+        <SingleArrivalRow directionArray={departures.south} direction={southTerminus} />
       </div>
     </div>
   );

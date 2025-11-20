@@ -1,4 +1,4 @@
-function TimeTableCol({ directionArray, direction }) {
+function SingleArrivalRow({ directionArray, direction }) {
 
     return (
         <div className=" biggy flex flex-row justify-between items-center text-black -z-10 bg-white rounded-full w-full">
@@ -22,4 +22,4 @@ function TimeTableCol({ directionArray, direction }) {
     )
 }
 
-export default TimeTableCol;
+export default SingleArrivalRow;

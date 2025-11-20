@@ -14,9 +14,9 @@ function Clock() {
   }, [time]);
 
   return (
-    <div className="flex flex-col items-center">
-      <h1>{time.toTimeString().substring(0, 8)}</h1>
-      <h2>{time.toDateString().substring(0, time.toDateString().length - 5)}</h2>
+    <div className="flex flex-col items-end">
+      <p className='text-4xl'>{time.toDateString().substring(0, time.toDateString().length - 5)}</p>
+      <p className='text-[180px] leading-[150px]'>{time.toTimeString().substring(0, 8)}</p>
     </div>);
 }
 

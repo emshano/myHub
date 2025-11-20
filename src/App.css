@@ -2,16 +2,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Nanum+Gothic+Coding:wght@400;700&display=swap');
 
+
 html {
   background: rgb(0,0,0);
   color: aliceblue;
-}
-
-
-
-h1 {
-  font-size: 200px;
-  font-weight: 900;
 }
 
 p {
