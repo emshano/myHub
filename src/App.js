@@ -16,7 +16,7 @@ function Clock() {
   return (
     <div className="flex flex-col items-end clock">
       <p className='text-4xl -mb-4'>{time.toDateString().substring(0, time.toDateString().length - 5)}</p>
-      <p className='text-[180px] leading-[180px]'>{time.toTimeString().substring(0, 8)}</p>
+      <p className='text-[180px] leading-[180px] -tracking-widest'>{time.toTimeString().substring(0, 8)}</p>
     </div>);
 }
 
