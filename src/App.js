@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import SingleTrainStatus from './SingleTrainStatus.jsx';
 import './App.css';
 // import BusTime from './BusTime';
+// import SpirographP5 from './SpirographP5.jsx';
 
 function Clock() {
   const [time, setTime] = useState(new Date())
@@ -29,6 +30,7 @@ function App() {
         {/* <BusTime/> */}
       </div>
       <div className=''>
+        {/* <SpirographP5 /> */}
         <Clock />
       </div>
 
