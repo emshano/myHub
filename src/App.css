@@ -13,6 +13,10 @@ p {
   font-size: 36px;
 }
 
+.clock{
+  font-family: "Chivo Mono";
+}
+
 .line-info {
   display: flex;
   /* box-shadow: 12px 0px 0px rgb(0, 0, 0) */

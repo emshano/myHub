@@ -2,7 +2,7 @@ function SingleArrivalRow({ directionArray, direction }) {
 
     return (
         <div className=" biggy flex flex-row justify-between items-center text-black -z-10 bg-white rounded-full w-full">
-            <div className=" lefty flex flex-col items-start text-4xl font-bold pl-2 w-full justify-start place-self-stretch rounded-l-3xl">
+            <div className=" lefty flex flex-col items-start text-4xl font-bold pl-2 w-full justify-center place-self-stretch rounded-l-3xl">
                 <span className="">{direction}</span>
             </div>
             <div className="flex">
