@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import SingleTrainStatus from './SingleTrainStatus.jsx';
 import './App.css';
+import StandbyWorldMap from './StandbyWorldMap.jsx';
 // import BusTime from './BusTime';
 // import SpirographP5 from './SpirographP5.jsx';
 
@@ -31,6 +32,11 @@ function App() {
       </div>
       <div className=''>
         <Clock />
+        <div className='flex flex-row justify-end'>
+          <div className='w-3/4'>
+            <StandbyWorldMap />
+          </div>
+        </div>
       </div>
 
     </div>
