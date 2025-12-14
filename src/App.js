@@ -30,7 +30,6 @@ function App() {
         {/* <BusTime/> */}
       </div>
       <div className=''>
-        {/* <SpirographP5 /> */}
         <Clock />
       </div>
 

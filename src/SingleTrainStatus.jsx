@@ -32,13 +32,16 @@ function SingleTrainStatus({ trainLineFeed, trainLine, station, northTerminus, s
           let bufferArray = new Uint8Array(response.data);
           var feed = GtfsRealtimeBindings.transit_realtime.FeedMessage.decode(bufferArray);
 
-
           feed.entity.forEach((entity, i) => {
-            //var tripUpdate = entity.tripUpdate
-            if (i % 2 === 0 || i === 0) {
+            //in the A/C/E endpoint, every other index had the tripUpdate property 
+            //in the 1/2/3/4/5/6/7 endpoint, it's not structured in the same way
+
+            //so instead of checking if the index is 0 or even, I have to explicitly
+            //check if each element in the array has a tripUpdate property
+            if (entity.hasOwnProperty("tripUpdate")) {
               try {
-                var routeID = entity.tripUpdate.trip.routeId
-                var stopTimes = entity.tripUpdate.stopTimeUpdate
+                var routeID = entity.tripUpdate.trip.routeId //gets the train route
+                var stopTimes = entity.tripUpdate.stopTimeUpdate //gets an array of arrival/departure times at a particular stop
                 console.log(entity);
 
                 stopTimes.forEach((stopTime) => {
