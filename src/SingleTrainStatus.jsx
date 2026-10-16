@@ -103,7 +103,7 @@ function SingleTrainStatus({ trainLineFeed, trainLine, station, northTerminus, s
 
 
 
-      <div className="timeTable mt-3">
+      <div className="timeTable mt-1">
         <DotLeaderArrivalRow directionArray={departures.north} direction={northTerminus} />
         <DotLeaderArrivalRow directionArray={departures.south} direction={southTerminus} />
       </div>
