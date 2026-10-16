@@ -89,14 +89,14 @@ function SingleTrainStatus({ trainLineFeed, trainLine, station, northTerminus, s
 
   return (
     <div className="mb-4">
-      <div className="flex w-full min-w-0 flex-col items-start overflow-hidden font-mono text-2xl leading-none text-white">
-        <span className="shrink-0 whitespace-nowrap font-black">
+      <div className="flex w-full min-w-0 flex-col items-start overflow-hidden text-4xl leading-none text-white font-extrabold">
+        <span className="shrink-0 whitespace-nowrap ">
           <span className={trainLine === '3' ? 'text-red-500' : trainLine === '4' ? 'text-green-500' : trainLine === 'A' || trainLine === 'C' ? 'text-blue-500' : ''}>
             ({trainLine})
           </span>{' '}
           {mtaStations[stationCode].stop_name}
         </span>
-        <span className="shrink-0 whitespace-nowrap font-light text-white/60">
+        <span className="shrink-0 whitespace-nowrap text-2xl font-thin text-white/60">
           Last updated: {new Date().toTimeString().substring(0, 8)}
         </span>
       </div>

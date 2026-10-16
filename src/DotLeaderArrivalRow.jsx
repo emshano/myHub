@@ -1,6 +1,6 @@
 function DotLeaderArrivalRow({ directionArray = [], direction }) {
   return (
-    <div className="clock flex w-full min-w-0 flex-col items-start overflow-hidden font-mono text-2xl leading-none text-white">
+    <div className="clock flex w-full min-w-0 flex-col items-start overflow-hidden font-mono text-4xl leading-none -tracking-widest text-white">
       <span className="max-w-full shrink-0 overflow-hidden text-ellipsis whitespace-nowrap">
         {direction}
       </span>
@@ -11,7 +11,7 @@ function DotLeaderArrivalRow({ directionArray = [], direction }) {
 
           return (
             <span key={`${trainObj.line}-${trainObj.time}-${index}`}>
-              {index > 0 && <span className="text-white/30" aria-hidden="true">....</span>}
+              {index > 0 && <span className="text-white/30" aria-hidden="true">...</span>}
               <span className={trainObj.line === '3' ? 'text-red-500' : trainObj.line === '4' ? 'text-green-500' : trainObj.line === 'A' || trainObj.line === 'C' ? 'text-blue-500' : ''}>
                 ({trainObj.line})
               </span>{minutesText}
