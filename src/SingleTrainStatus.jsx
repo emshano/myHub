@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import GtfsRealtimeBindings from 'gtfs-realtime-bindings';
 import axios from 'axios';
-import SingleArrivalRow from './SingleArrivalRow'
+import DotLeaderArrivalRow from './DotLeaderArrivalRow';
 import './App.css';
 import mtaStations from './mta_dict/mtaStations';
 
@@ -88,24 +88,24 @@ function SingleTrainStatus({ trainLineFeed, trainLine, station, northTerminus, s
   }, []);
 
   return (
-    <div className="">
-      <div className="flex flex-row justify-between items-center">
-        <div className="stationTitle">
-          <div className="imgContainer"> <img className="h-16 w-16" src={`signage/${trainLine}.svg`} alt="Train line logo"></img></div>
-          <div className="flex place-self-center">
-            <p className='font-bold text-4xl'> {mtaStations[stationCode].stop_name}</p>
-          </div>
-        </div>
-        <div>
-          <p className="updated">Last updated: {new Date().toTimeString().substring(0, 8)} </p>
-        </div>
+    <div className="mb-4">
+      <div className="flex w-full min-w-0 flex-col items-start overflow-hidden font-mono text-2xl leading-none text-white">
+        <span className="shrink-0 whitespace-nowrap font-black">
+          <span className={trainLine === '3' ? 'text-red-500' : trainLine === '4' ? 'text-green-500' : trainLine === 'A' || trainLine === 'C' ? 'text-blue-500' : ''}>
+            ({trainLine})
+          </span>{' '}
+          {mtaStations[stationCode].stop_name}
+        </span>
+        <span className="shrink-0 whitespace-nowrap font-light text-white/60">
+          Last updated: {new Date().toTimeString().substring(0, 8)}
+        </span>
       </div>
 
 
 
-      <div className="timeTable">
-        <SingleArrivalRow directionArray={departures.north} direction={northTerminus} />
-        <SingleArrivalRow directionArray={departures.south} direction={southTerminus} />
+      <div className="timeTable mt-3">
+        <DotLeaderArrivalRow directionArray={departures.north} direction={northTerminus} />
+        <DotLeaderArrivalRow directionArray={departures.south} direction={southTerminus} />
       </div>
     </div>
   );
